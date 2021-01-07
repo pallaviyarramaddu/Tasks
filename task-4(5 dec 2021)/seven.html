@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum_of_numbers</title>
+</head>
+<body>
+<script>
+	var arr,i,j,n,sum,newArray;
+	  arr = [2,3,5, 7,9,0];
+       newArray=[];
+	 
+	 function pair(a,n){
+
+	 for(i=0;i<arr.length;i++){
+	 for(j=i+1;j<arr.length;j++){
+
+	 		if(a[i] +a[j]==n){
+ 
+          newArray.push([a[i],a[j]]); 
+	 		}
+	 	}
+	 }
+}
+pair(arr, 10);
+document.write(newArray);
+</script>
+
+</body>
+</html>
