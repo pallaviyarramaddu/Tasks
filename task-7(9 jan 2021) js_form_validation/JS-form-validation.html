@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js form validation</title>
+	<style>
+		p{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<form name="myForm" action="" method="post" onsubmit="return validateForm()" >
+	<label for="fname">FirstName</label>
+	<input type="text" name="fname"><p id="error"></p><br></br>
+
+	<label for="lname">LastName</label>
+	<input type="text" name="lname"><p id="error1"></p><br></br>
+
+	<label for="email">Email</label>
+	<input type="email" name="email" ><p id="error2"></p><br></br>
+
+	<label for="psw">Password</label>
+	<input type="password" name="psw" ><p id="error3"></p><br></br>
+
+	<label for="mobile">Mobile</label>
+	<input type="tel" name="mobile" ><p id="error4"></p><br></br>
+
+	<input type="submit"  name="submit">
+</form>
+<script>
+	
+	function validateForm(){
+		var fname = document.forms['myForm']['fname'].value;
+		if(fname == ""){
+			document.getElementById("error").innerHTML= " should not be empty";
+			return false;
+		}
+		else if (fname.length < 4) {
+			document.getElementById("error").innerHTML= "enter more than four char";
+			return false;
+		}
+		else if(fname.length > 10){
+			document.getElementById("error").innerHTML="please enter 10 char of the name";
+			return false;
+		}
+
+         var lname = document.forms['myForm']['lname'].value;
+		if(lname == ""){
+			document.getElementById("error1").innerHTML= "please enter your name";
+			return false;
+		}
+		else if (lname.length<4){
+			document.getElementById("error1").innerHTML= " enter more than four char";
+			return false;
+		}
+		else if(lname.length>10){
+			document.getElementById("error1").innerHTML="please enter 10 char of the name";
+			return false;
+		}
+
+    var email= document.forms['myForm']['email'].value;
+	     if(email ==""){
+
+		document.getElementById("error2").innerHTML= "please enter your email";
+		return false;
+	     }
+	      else if(email.indexOf('@')<=2){
+			document.getElementById("error2").innerHTML="invalid @ position";
+			return false;
+		}
+
+
+	     else if((email.charAt(email.length-4) !=".") && (email.charAt(email.length-3) !=".")){
+			document.getElementById("error2").innerHTML="invalid . position";
+			return false;
+		}
+
+       var psw= document.forms['myForm']['psw'].value;
+
+	     if(psw.length < 8){
+			document.getElementById("error3").innerHTML="enter more than 8 char";
+			return false;
+		}
+        
+        else if(psw.length > 14){
+			document.getElementById("error3").innerHTML="maximum password strength is 14 char";
+			return false;
+		}
+
+		else if(psw.search(/[A-Z]/) == -1){
+			document.getElementById("error3").innerHTML="Atleast select one upper case letter";
+			return false;
+		}
+         
+         else if(psw.search(/[a-z]/) == -1){
+			document.getElementById("error3").innerHTML="Atleast select one lower case letter";
+			return false;
+		}
+		else if(psw.search(/[0-9]/) == -1){
+			document.getElementById("error3").innerHTML="Atleast select one number ";
+			return false;
+		}
+
+        else if(psw.search(/[!\@\#\$\%\^\&\(\)\_\+\,\.\;\:]/) == -1){
+			document.getElementById("error3").innerHTML="Atleast select one special char ";
+			return false;
+		}
+
+   var mobile= document.forms['myForm']['mobile'].value;
+	     if(mobile ==""){
+
+		document.getElementById("error4").innerHTML= " enter mobile number";
+		return false;
+	  }
+      
+     else if(isNaN(mobile)){
+
+        
+		document.getElementById("error4").innerHTML= " enter numeric values only";
+		return false;
+       }
+       else if (mobile.length < 10) {
+
+		document.getElementById("error4").innerHTML= " must be enter 10 numbers ";
+		return false;
+       }
+        else if (mobile.length > 10) {
+
+		document.getElementById("error4").innerHTML= " enter 10 digits only";
+		return false;
+	    }
+
+       else if((mobile.charAt(0)!=6) && (mobile.charAt(0)!=7) && (mobile.charAt(0)!=8) && (mobile.charAt(0)!=9)){
+
+       	document.getElementById("error4").innerHTML= "number strats with 6or7or8or9";
+		return false;
+       }
+       
+
+	}
+</script>
+</body>
+</html>
