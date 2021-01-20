@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>validation</title>
+	<style>
+#error4,#error1,#error3,#error2,#error5{
+	color:red;
+}
+
+	</style>
+}
+</head>
+<body>
+	<form name="myform">
+		<label>NAME</label>
+		<input type="text" name="name" id="name"><span id="error1"></span><br></br>
+		<label>PHONE NUMBER</label>
+		<input type="tel" name="number" id="number"><span id="error2"></span><br></br>
+		<label>EMAIL</label>
+		<input type="email" name="email" id="email"><span id="error3"></span><br></br>
+		<label>PASSWORD</label>
+		<input type="password" name="psw" id="psw"><span id="error4"></span><br></br>
+		
+		<label>GENDER</label>
+		<input type="radio" name="gender" id="gender">female
+		<input type="radio" name="gender" id="gender">male<span id="error5"></span><br></br>
+		<input type="button" name="btn" value="sign up" onclick="validateform()">
+	</form>
+	<script>
+		function validateform(){
+			 var name= document.forms["myform"]["name"].value;
+			 if(name==""){
+			 	document.getElementById('name').style.border= '1px solid red';
+			 	document.getElementById('error1').innerHTML= 'please enter name';
+			 }
+			  var number= document.forms["myform"]["number"].value;
+			 if(number==""){
+			 	document.getElementById('number').style.border= '1px solid red';
+			 	document.getElementById('error2').innerHTML= 'please enter number';
+			 }
+			  var email= document.forms["myform"]["email"].value;
+			 if(email==""){
+			 	document.getElementById('email').style.border= '1px solid red';
+			 	document.getElementById('error3').innerHTML= 'please enter email';
+			 }
+			  var psw= document.forms["myform"]["psw"].value;
+			 if(psw==""){
+			 	document.getElementById('psw').style.border= '1px solid red';
+			 	document.getElementById('error4').innerHTML= 'please enter password';
+			 }
+
+			   var gender = myForm.querySelectorAll('input[name="gender"]:checked');
+			 if(gender.length==""){
+			 	document.getElementById('gender').innerHTML= 'select gender';
+			 	//document.getElementById('error5').innerHTML= 'please select gender';
+			 }
+		}
+	</script>
+</body>
+</html>
