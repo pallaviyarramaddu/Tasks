@@ -51,9 +51,12 @@
 
 			   var gender = myForm.querySelectorAll('input[name="gender"]:checked');
 			 if(gender.length==""){
-			 	document.getElementById('gender').innerHTML= 'select gender';
-			 	//document.getElementById('error5').innerHTML= 'please select gender';
+			 	//document.getElementById('gender').innerHTML= 'select gender';
+			 	document.getElementById('error5').innerHTML= 'please select gender';
 			 }
+			 else{
+				document.forms.myform.submit();
+			}
 		}
 	</script>
 </body>
