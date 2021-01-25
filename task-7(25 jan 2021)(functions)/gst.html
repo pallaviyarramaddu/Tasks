@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gst calculations</title>
+</head>
+<body>
+<script>
+	function gstcalculation(p,gst=18) {
+      
+		var product_price,gst_of_product,total_price;
+
+		product_price=p;
+
+        gst_of_product= gst;
+
+		total_price=product_price+(product_price*gst/100);
+
+		return total_price;
+	
+	}
+
+   document.write(gstcalculation(100));
+   
+</script>
+</body>
+</html>

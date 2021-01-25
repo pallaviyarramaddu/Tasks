@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>types of functions</title>
+</head>
+<body>
+	<p id="demo"></p>
+<script>
+	// types of functions
+	// 1.function with parameters 
+	// 2.function without parameters
+	// 3.function with default values
+	// 4.function return 
+	// 5.self invoking
+
+
+
+	//5.self invoking(immediately invoked)
+	(function(){
+		document.write("gud morning"+"<br>");
+	})();
+
+	//1.function with paramaters
+ 
+     function check(num){
+     
+     document.write(num+"<br>");
+
+     }
+     check(10);
+
+     //2.function without parameters
+
+     function range(){
+     	document.write("hello"+"<br>");
+     }
+     range();
+
+     // 3.function with default values
+
+        function number(a=10,b=2){
+          
+          document.write(a*b+"<br>")
+          
+        }
+        number();
+        //4.function return
+      function myFunction(a, b) {
+   return a * b;                // Function returns the product of a and b
+    }
+    document.getElementById("demo").innerHTML = myFunction(3,4);
+</script>
+</body>
+</html>
