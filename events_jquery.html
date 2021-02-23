@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>events in jquery</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <p id="para">this is an bind method <b>click me</b></p>
+    <p id="para1">this is an dbclick on button to see effect</p>
+    <button class="dbclick">button</button><br></br>
+    <form>
+        name<input type="text" name="name" id="input">
+        <p>keypress:<span></span></p>
+        <input type="submit" value="Submit">
+    </form>
+    <img src="D:\course\bootstrap\AIT-white.jpg" class="image" style="display:none" alt="ait">
+    <p id="p1">hover effect</p>
+    <button id="btn1">click me to see on method</button><br></br>
+    keyup and keydown <input type="text" name="name" class="input1">
+    <script>
+
+        //events
+
+        // example for bind()
+        $(document).ready(function () {
+            $("p#para").bind("click", function () {
+                // alert("The paragraph was clicked.");
+                $(this).css("background", "red");
+            });
+
+            //example for dbclick
+
+            $(".dbclick").dblclick(function () {
+                $("#para1").hide();
+            });
+
+
+            //example for mouseenter and mouseleave
+
+            $(".dbclick").mouseenter(function () {
+                //    alert("mouse enter");
+                $(".image").show();
+            })
+
+
+            //hover
+            $(".image").mouseleave(function () {
+                //    alert("mouse leave");
+                $(this).hide();
+            })
+            $("#p1").hover(function () {
+                $(this).html("You entered p1!");
+            },
+                function () {
+                    $(this).html("Bye! You now leave p1!");
+                });
+            // form events
+
+            //focus and blur
+            $("input").focus(function () {
+                $(this).css("background-color", "yellow");
+            });
+            $("input").blur(function () {
+                $(this).css("border", "3px solid red");
+            });
+            // on 
+            $("#btn1").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
+            });
+            // change
+            $("#input").change(function () {
+                alert("The text has been changed.");
+            });
+            //submit
+            $("form").submit(function () {
+                alert("Submitted");
+            });
+            //   keyboard events
+            // keypress
+            $("#input").keypress(function () {
+                $("span").html("keypressed");
+            });
+            // key up and keydown
+            $(".input1").keydown(function () {
+                $(".input1").css("background-color", "orangered");
+            });
+            $(".input1").keyup(function () {
+                $(".input1").css("background-color", "pink");
+            });
+        });
+    </script>
+</body>
+
+</html>
