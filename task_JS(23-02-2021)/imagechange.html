@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image change</title>
+</head>
+<body>
+    <img src="D:\course\java script\task(23-02-2021)\html_image.png" alt="html5" id="first"><br></br>
+
+    <button onclick="change()">button 1</button>
+    <button onclick="change1()">button 2</button>
+    <button onclick="change2()">button 3</button>
+    <script>
+          function change1(){
+              var image="D:/course/java script/task(23-02-2021)/image2.jfif";
+              document.getElementById("first").src = image.replace("D:\course\java script\task(23-02-2021)\image2.jfif");
+          }
+          function change2(){
+              var image1="D:/course/java script/task(23-02-2021)/js-logo.png";
+              document.getElementById("first").src = image1.replace("D:\course\java script\task(23-02-2021)\js-logo.png");
+          }
+          function change(){
+              var image="D:/course/java script/task(23-02-2021)/html_image.png";
+              document.getElementById("first").src = image.replace("D:\course\java script\task(23-02-2021)\htmi_image.png");
+          }
+    </script>
+</body>
+
+</html>
