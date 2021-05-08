@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>even numbers</title>
+</head>
+
+<body>
+    <!-- QUESTION 1 -->
+
+    <script>
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+        for (var i = 1; i < array.length; i = i + 2) {
+            document.write(array[i] + "<br>");
+        }
+    </script>
+
+    <!-- QUESTION 3 -->
+
+    <script>
+        const dataArr = [0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 10];
+        const resultArr = dataArr.filter((data, index) => {
+            return dataArr.indexOf(data) === index;
+        })
+        console.log(resultArr);
+    </script>
+
+    <!-- QUESTION 4 -->
+
+    <script>
+        var items = [
+            {
+                "id": 4, "name": "abc"
+            },
+            {
+                "id": 10, "name": "ab2"
+            },
+            {
+                "id": 5, "name": "abc3"
+            },
+            {
+                "id": 6, "name": "abc5"
+            }
+        ];
+
+        items.sort(function (a, b) {
+            if (a.id !== b.id) {
+                return a.id - b.id
+            }
+            if (a.name === b.name) {
+                return 0;
+            }
+            return a.name > b.name ? 1 : -1;
+        });
+        console.log(items);
+    </script>
+
+    <!-- QUESTION 4 -->
+    <script>
+        const userAction = async () => {
+        const response = await fetch('http://www.example.com/api/get/1');
+        const myJson = await response.json();
+      }
+    </script>
+<!-- QUESTION 2 -->
+<script>
+   
+    
+     var a= [ 0,0,1,1,0,0,0,1,0,0,1,1,1,0];
+   
+   
+        var sum = 0;
+        var max  = 0 ;
+        for(var i = 0 ; i< a.length ; i++){
+           if(a[i] == 0){
+               sum = 0;
+           } else {
+               sum++;
+               if(sum > max)
+                   max = sum;
+           }
+        }
+        
+    document.write("Max consecutive 1s is: "+max);
+    
+    
+
+</script>
+</body>
+
+</html>
